@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bridge Collective – A classroom for every child</title>
+  <meta name="description" content="We fund the schools, train the teachers, and measure what works.">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="Bridge Collective home">
+      <span class="logo__dot" aria-hidden="true"></span>
+      Bridge Collective
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+      <svg class="menu-toggle__open" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+        <path d="M0 6.5h20M0 12.5h20"/>
+      </svg>
+      <svg class="menu-toggle__close" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+        <path d="M2 2l16 16M18 2L2 18"/>
+      </svg>
+    </button>
+  </header>
+
+  <nav class="menu" id="site-menu" aria-label="Main">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#our-work">Our Work</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#annual-report">Annual Report</a></li>
+      <li><a href="#donate">Donate</a></li>
+    </ul>
+  </nav>
+
+  <div class="scrim" aria-hidden="true"></div>
+
+  <main class="layout">
+    <section class="hero" id="about">
+      <div class="hero__inner">
+        <h1>A classroom<br class="br-desktop"> for every child.</h1>
+        <p>We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a graduate tomorrow.</p>
+      </div>
+    </section>
+
+    <ul class="stats" id="our-work">
+      <li>
+        <a class="stat" href="#about">
+          <span class="stat__top">
+            <svg class="stat__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 2.5c.9 7.2 4.4 11.4 13.5 13.5-9.1 2.1-12.6 6.3-13.5 13.5-.9-7.2-4.4-11.4-13.5-13.5 9.1-2.1 12.6-6.3 13.5-13.5Z"/>
+            </svg>
+            <span class="stat__value">2.4M</span>
+          </span>
+          <span class="stat__text">
+          <span class="stat__title">Students reached</span>
+          <span class="stat__desc">Across 31 countries since 2011.</span>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a class="stat" href="#partners">
+          <span class="stat__top">
+            <svg class="stat__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M16 7v18M7 16h18"/>
+            </svg>
+            <span class="stat__value">1,284</span>
+          </span>
+          <span class="stat__text">
+            <span class="stat__title">Schools partnered</span>
+            <span class="stat__desc">In 14 countries, from Kenya to Guatemala.</span>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a class="stat" href="#annual-report">
+          <span class="stat__top">
+            <svg class="stat__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 16h20M17 7l9 9-9 9"/>
+            </svg>
+            <span class="stat__value">38K</span>
+          </span>
+          <span class="stat__text">
+            <span class="stat__title">Teachers trained</span>
+            <span class="stat__desc">Equipped with modern tools and methodology.</span>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a class="stat" href="#our-work">
+          <span class="stat__top">
+            <svg class="stat__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 22l8-8 5 5 12-12M20 7h8v8"/>
+            </svg>
+            <span class="stat__value">3.1×</span>
+          </span>
+          <span class="stat__text">
+            <span class="stat__title">Graduation lift</span>
+            <span class="stat__desc">Partner schools outperform national averages 3x.</span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Bridge Collective</p>
+    <p>Registered charity 12345678</p>
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var toggle = document.querySelector('.menu-toggle');
+      var menu = document.getElementById('site-menu');
+      var scrim = document.querySelector('.scrim');
+
+      function setOpen(open) {
+        root.classList.toggle('menu-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+
+      toggle.addEventListener('click', function () {
+        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+      });
+      scrim.addEventListener('click', function () { setOpen(false); });
+      menu.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && root.classList.contains('menu-open')) {
+          setOpen(false);
+          toggle.focus();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
